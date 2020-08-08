@@ -4,28 +4,22 @@ class Solution:
         b=sorted(s)
         lst=[]
         count=dict()
-        for k in range(0,len(a)):
-            dem=0
-            for i in range(0,len(b)):
-                if b[i]==a[k]: 
-                    dem+=1
-            lst.append(dem)
-        for key in a:
-            for value in lst:
-                count[key]=value
-                lst.remove(value)
-                break
+        for i in a:
+            count[i]=0
+        for i in b:
+            count[i]+=1
         res=[]
-        while len(res)<len(b):
-            for k in count.keys():
-                if count[k]>0:
-                    res.append(k)
-                    count[k]-=1
-            for k in reversed(count.keys()):
-                if count[k]>0:
-                    res.append(k)
-                    count[k]-=1
-        return count
+        while True:
+            for i in a:
+                if count[i]>=1:
+                    res.append(i)
+                    count[i]-=1
+            for i in range(len(a)-1,-1,-1):
+                if count[a[i]]>=1:
+                    res.append(a[i])
+                    count[a[i]]-=1
+            if len(res)==len(s): break
+        return "".join(res)
 s=Solution()
 print(s.sortString("aaaabbbbcccc"))
 
