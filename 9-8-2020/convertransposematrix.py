@@ -1,5 +1,7 @@
+# tìm ma trận chuyển vị
 class Solution:
     def luckyNumbers (self, matrix):
+        # Tạo ma trận chuyển vị
         newMatrix=[]
         for k in range(0,len(matrix[1])):
             subMatrix=[]
@@ -9,5 +11,5 @@ class Solution:
 
         return newMatrix
 s=Solution()
-print(s.luckyNumbers([[7,8],[1,2]]))
+print(s.luckyNumbers([[3,7,8],[9,11,13],[15,16,17]]))
                 
