@@ -2,12 +2,10 @@
 import numpy as np
 class Solution:
     def luckyNumbers (self, matrix):
-        newMatrix=[]
+        # newMatrix=numpy.transpose(matrix)
+        newMatrix =[]
         lst=[]
-        a = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
-        print(a)
-        # tìm ma trận chuyển vị
-        for k in range(0,len(matrix[1])):
+        for k in range(0,len(matrix[0])):
             subMatrix=[]
             for i in range(0,len(matrix)):
                 subMatrix.append(matrix[i][k])
@@ -22,5 +20,3 @@ class Solution:
                         return lst
 s=Solution()
 print(s.luckyNumbers([[3,7,8],[9,11,13],[15,16,17]]))
-
-                
