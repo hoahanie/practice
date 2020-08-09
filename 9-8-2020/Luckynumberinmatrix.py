@@ -1,15 +1,15 @@
 # https://leetcode.com/problems/lucky-numbers-in-a-matrix/
+# import numpy
 class Solution:
     def luckyNumbers (self, matrix):
-        newMatrix=[]
+        # newMatrix=numpy.transpose(matrix)
+        newMatrix =[]
         lst=[]
-        # tìm ma trận chuyển vị
-        for k in range(0,len(matrix[1])):
+        for k in range(0,len(matrix[0])):
             subMatrix=[]
             for i in range(0,len(matrix)):
                 subMatrix.append(matrix[i][k])
             newMatrix.append(subMatrix)
-        # tìm lucky number
         for k in matrix:
             for i in range(0,len(k)):
                 for j in range(0,len(matrix)):
