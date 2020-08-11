@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/find-common-characters/
 class Solution:
     def commonChars(self, A):
         B=[]
@@ -9,11 +10,12 @@ class Solution:
         i=0
         for i in B[0]:
             for k in B:
-                if i in k:
-                    k.remove(i)
-                else:
+                if i not in k:
                     break
-            lst.append(i)
+            else:
+                lst.append(i)
+                k.remove(i)
+
         return lst
 s=Solution()
-print(s.commonChars(["bella","label","roller"]))
+print(s.commonChars(["cool","lock","cook"]))
