@@ -3,19 +3,23 @@ class Solution:
     def commonChars(self, A):
         B=[]
         lst=[]
-        #chuyen cac phan tu cua A thanh list
+        res =[]
         for i in A:
-            B.append(list(i))
-        #lay tung phan tu cua B[0] dem check co nam trong cac phan tu con lai cua B khong
-        i=0
+            lst =list(str(i))
+            B.append(lst)
+            lst=[]
         for i in B[0]:
             for k in B:
                 if i not in k:
                     break
             else:
-                lst.append(i)
-                k.remove(i)
-
-        return lst
+                res.append(i)
+                for x in range (1,len(B)):
+                    for n in range(0,len(B[x])):
+                        if B[x][n]==i:
+                            B[x].remove(i)
+                            break  
+        return res
+        
 s=Solution()
-print(s.commonChars(["cool","lock","cook"]))
+print(s.commonChars(["bella","label","roller"]))
