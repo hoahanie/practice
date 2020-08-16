@@ -17,7 +17,9 @@ class graph:
            
 
     def getLen(self):
-        return max(self.graph)+1
+        if self.graph:
+            return max(self.graph)+1
+        return 0
 
     def DFS(self,v,check,lst):
         visited =[False]*(max(self.graph)+1)
@@ -30,7 +32,6 @@ class Solution:
         for i in pairs:
             g.addEdge(i[0],i[1])
             g.addEdge(i[1],i[0])
-        print(g.graph)
     
         check = [False]*g.getLen()
         res = []
@@ -39,33 +40,14 @@ class Solution:
             if check[i]==False:
                 g.DFS(i,check,lst)
                 res.append(lst)
-        print(res)
-        listSet = []
+        s = list(s)
         for i in res:
-            s1=[]
-            for j in i:
-                s1.append(s[j])
-            listSet.append(s1)
-        print(listSet)
-        for i in range(len(listSet)):
-            listSet[i].sort()
-        listSet.sort()
-        print(listSet)
-        kq = ''
-        for i in listSet:
-            for j in i:
-                kq+=j
-            
-        return kq
-
-    def countMax(self,pairs):
-        maxPairs=pairs[0][0]
-        for i in pairs:
-            for j in i:
-                if j>maxPairs:
-                    maxPairs=j
-        return maxPairs
-
+            i.sort()
+            B = [s[k] for k in i]
+            B.sort()
+            for j in range(len(B)):
+                s[i[j]] = B[j]
+        return "".join(s)
 s = Solution()
-print(s.swap("cba",[[0,1],[1,2]]))
+print(s.swap("dcab",[[0,3],[1,2],[0,2]]))
 
