@@ -68,4 +68,3 @@ class Solution:
 
 s = Solution()
 print(s.swap("cba",[[0,1],[1,2]]))
-
