@@ -16,4 +16,4 @@ class Solution:
                     return len(str(a))
                     break
 s=Solution()
-print(s.smallestRepunitDivByK(19927))
+print(s.smallestRepunitDivByK(1))
