@@ -1,17 +1,18 @@
 # https://leetcode.com/problems/monotonic-array/
 class Solution:
     def isMonotonic(self, A):
-        check =True
+        checkInc =True
+        checkDec = True
         for i in range(0,len(A)-1):
             if A[i]>A[i+1]:
-                check = False
-        if check == True: 
+                checkInc = False
+        for k in range(0,len(A)-1):
+            if A[k]< A[k+1]:
+                checkDec = False
+        if checkInc == True and checkDec == True:
             return True
-        else: 
-            for k in range(0,len(A)-1):
-                if A[k]< A[k+1]:
-                    return False
-            return True
+        else:
+            return False
         
 s=Solution()
 print(s.isMonotonic([1,3,2]))
