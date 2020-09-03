@@ -7,9 +7,11 @@ class solution:
             count[ord(i)]+=1
         for i in range(256):
             count[i]+=count[i-1]
+        print(count)
         for i in range(len(input)):
             output[count[ord(input[i])]-1]=input[i]
             count[ord(input[i])]-=1
+
         print(output)
         for i in range(len(input)):
             ans[i]=output[i]

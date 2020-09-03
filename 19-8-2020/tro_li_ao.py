@@ -1,6 +1,7 @@
 import speech_recognition
 import pyttsx3
 from datetime import date, datetime
+import webbrowser
 
 robot_mouth = pyttsx3.init()
 robot_ear = speech_recognition.Recognizer()
@@ -30,6 +31,9 @@ while True:
     elif "time" in you:
         now = datetime.now()
         robot_brain = now.strftime("%H hours %M minutes %S seconds")
+    elif "Google" in you:
+        robot_brain = "open google"
+        webbrowser.open("www.google.com")
     elif "bye" in you:
         robot_brain = "Bye Hoa"
         print("Robot: "+ robot_brain)

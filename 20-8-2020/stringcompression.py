@@ -19,6 +19,7 @@ class Solution:
         dem =0
         for i in res:
             dem+= len(i)
-        return dem
+        return dem, res        
+
 s=Solution()
 print(s.compress(["a","a","b","b","c","c","c","c","c","c","c","c","c","c","c","c"]))

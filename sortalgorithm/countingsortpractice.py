@@ -16,8 +16,7 @@ class solution:
         print(output)
         for i in range(len(input)):
             res[i]=output[i]
-        print(res)
-        return
+        return res
 s=solution()
 print(s.counting_sort([9,6,3,5,0]))
 

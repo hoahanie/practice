@@ -16,12 +16,12 @@ class Solution:
             check=True
             e=self.dictionary(i)
             for i in e:
-                if i in d and e[i]<=d[i]:
-                    check= True
-                else:
+                if i not in d:
                     check = False
+                if i in d and e[i]>d[i]:
+                    check= False
             if check== True:
                 dem+=1
         return dem
 s=Solution()
-print(s.numMatchingSubseq("btovxbkumc",["btovxbku","to","zueoxxxjme","yjkclbkbtl"]))
+print(s.numMatchingSubseq())
