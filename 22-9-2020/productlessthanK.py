@@ -3,8 +3,7 @@ class Solution:
     def numSubarrayProductLessThanK(self, nums, k):
         count =0
         for i in range(len(nums)):
-            a = self.countProduct(nums[i:],k)
-            count+=a
+            count += self.countProduct(nums[i:],k)
         return count
 
     def countProduct(self, num,k):
